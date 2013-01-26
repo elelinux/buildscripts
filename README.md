@@ -39,7 +39,7 @@ Now you can run the build script:
 * threads: Allows to choose a number of threads for syncing and building operation.
 
 
-ex: ./build-xy.sh maguro sync 12 (This will sync latest sources, build RootBox for GT-I9100 with -j12 threads)
+ex: ./build-xy.sh maguro sync 12 (This will sync latest sources, build XYE for Galaxy Nexus with -j12 threads)
 
 
 
