@@ -27,7 +27,7 @@ CLEAN="$4"
 # Inital Startup
 res1=$(date +%s.%N)
 
-echo -e "${cya}Building ${bldcya}XYE AOSP - v018 ${txtrst}";
+echo -e "${cya}Building ${bldcya}XYE AOSP - v019 ${txtrst}";
 
 # Sync the latest Xylon Sources
 echo -e ""
