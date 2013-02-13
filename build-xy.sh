@@ -33,6 +33,18 @@ echo -e "${cya}Building ${bldcya}XYE AOSP - v019 ${txtrst}";
 echo -e ""
 if [ "$SYNC" == "sync" ]
 then
+   if [ "$(which repo)" == "" ]
+   then
+	echo repo net da
+      if [ -f ~/bin/repo ]
+ 	then
+	echo "Y U NO install repo?!"
+	mkdir ~/bin
+        export PATH=~/bin:$PATH
+        curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo
+        chmod a+x ~/bin/repo 
+      fi
+   fi
    echo -e "${bldblu}Syncing latest Xylon sources ${txtrst}"
    repo sync -j"$THREADS"
    echo -e ""
