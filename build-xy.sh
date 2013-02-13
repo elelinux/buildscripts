@@ -35,7 +35,6 @@ if [ "$SYNC" == "sync" ]
 then
    if [ "$(which repo)" == "" ]
    then
-	echo repo net da
       if [ -f ~/bin/repo ]
  	then
 	echo "Y U NO install repo?!"
