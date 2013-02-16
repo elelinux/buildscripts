@@ -24,10 +24,16 @@ THREADS="$3"
 CLEAN="$4"
 
 
-# Inital Startup
+# Initial Startup
 res1=$(date +%s.%N)
 
 echo -e "${cya}This machine is gonna build - ${bldcya}XYE AOSP - v020 ${txtrst}";
+
+# Unset CDPATH variable if set
+if [ "$CDPATH" != "" ]
+then
+  unset CDPATH
+fi
 
 # Sync the latest Xylon Sources
 echo -e ""
@@ -36,12 +42,12 @@ then
    if [ "$(which repo)" == "" ]
    then
       if [ -f ~/bin/repo ]
- 	then
-	echo "Y U NO install repo?!"
-	mkdir ~/bin
+        then
+        echo "Y U NO install repo?!"
+        mkdir ~/bin
         export PATH=~/bin:$PATH
         curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo
-        chmod a+x ~/bin/repo 
+        chmod a+x ~/bin/repo
       fi
    fi
    echo -e "${bldblu}Syncing latest Xylon sources ${txtrst}"
@@ -57,7 +63,6 @@ then
 else
   echo -e "${bldblu}Skipping out folder cleanup ${txtrst}"
 fi
-
 
 # Setup Environment
 echo -e "${bldblu}Setting up build environment ${txtrst}"
