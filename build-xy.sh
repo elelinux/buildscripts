@@ -27,7 +27,7 @@ CLEAN="$4"
 # Initial Startup
 res1=$(date +%s.%N)
 
-echo -e "${cya}This machine is gonna build - ${bldcya}XYE AOSP - v2.1.0 ${txtrst}";
+echo -e "${cya}This machine is gonna build - ${bldcya}XYE AOSP - v2.1.1 ${txtrst}";
 
 # Unset CDPATH variable if set
 if [ "$CDPATH" != "" ]
