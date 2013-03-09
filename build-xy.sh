@@ -68,17 +68,53 @@ fi
 echo -e "${bldblu}Setting up build environment ${txtrst}"
 . build/envsetup.sh
 
-# Lunch Device
-echo -e ""
-echo -e "${bldblu}Lunching your device ${txtrst}"
-lunch "xylon_$DEVICE-userdebug";
+if [ "$DEVICE" == "all" ]
+then
+   echo -e ""
+   echo -e "${bldblu}Starting to build the epic ROM ${txtrst}"
+   echo -e "${bldblu}crespo ${txtrst}"
+   lunch "xylon_crespo-userdebug"
+   make -j"$THREADS" otapackage
+   echo -e "${bldblu}d2att ${txtrst}"
+   lunch "xylon_d2att-userdebug"
+   make -j"$THREADS" otapackage
+   echo -e "${bldblu}grouper ${txtrst}"
+   lunch "xylon_grouper-userdebug"
+   make -j"$THREADS" otapackage
+   echo -e "${bldblu}i9100g ${txtrst}"
+   lunch "xylon_i9100g-userdebug"
+   make -j"$THREADS" otapackage
+   echo -e "${bldblu}i9300 ${txtrst}"
+   lunch "xylon_i9300-userdebug"
+   make -j"$THREADS" otapackage
+   echo -e "${bldblu}maguro ${txtrst}"
+   lunch "xylon_maguro-userdebug"
+   make -j"$THREADS" otapackage
+   echo -e "${bldblu}mako ${txtrst}"
+   lunch "xylon_mako-userdebug"
+   make -j"$THREADS" otapackage
+   echo -e "${bldblu}tilapia ${txtrst}"
+   lunch "xylon_tilapia-userdebug"
+   make -j"$THREADS" otapackage
+   echo -e "${bldblu}toro ${txtrst}"
+   lunch "xylon_toro-userdebug"
+   make -j"$THREADS" otapackage
+   echo -e "${bldblu}toroplus ${txtrst}"
+   lunch "xylon_toroplus-userdebug"
+   make -j"$THREADS" otapackage
+else
+   # Lunch Device
+   echo -e ""
+   echo -e "${bldblu}Lunching your device ${txtrst}"
+   lunch "xylon_$DEVICE-userdebug";
 
-echo -e ""
-echo -e "${bldblu}Starting to build the epic ROM ${txtrst}"
+   echo -e ""
+   echo -e "${bldblu}Starting to build the epic ROM ${txtrst}"
 
-# Start Building like a bau5
-brunch "xylon_$DEVICE-userdebug" -j"$THREADS";
-echo -e ""
+   # Start Building like a bau5
+   brunch "xylon_$DEVICE-userdebug" -j"$THREADS";
+   echo -e ""
+fi
 
 # Once building completed, bring in the Elapsed Time
 res2=$(date +%s.%N)
