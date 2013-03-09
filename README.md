@@ -25,6 +25,7 @@ Now you can run the build script:
 
 
 * device: Choose between the following supported devices: 
+   - Build All Devices (all)
    - Nexus S (crespo)
    - AT&T Galaxy S3 (d2att)
    - Wifi Nexus 7 (grouper)
