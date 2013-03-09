@@ -35,7 +35,7 @@ Now you can run the build script:
    - GSM Nexus 7 (tilapia)
    - Verizon Galaxy Nexus (toro)
    - Sprint Galaxy Nexus (toroplus)
-* sync: Will sync latest RootBox sources before building
+* sync: Will sync latest XYAOSP sources before building
 * threads: Allows to choose a number of threads for syncing and building operation.
 
 
