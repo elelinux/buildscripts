@@ -102,6 +102,9 @@ then
    echo -e "${bldblu}toroplus ${txtrst}"
    lunch "xylon_toroplus-userdebug"
    make -j"$THREADS" otapackage
+   echo -e "${bldblu}pyramid ${txtrst}"
+   lunch "xylon_pyramid-userdebug"
+   make -j"$THREADS" otapackage
 else
    # Lunch Device
    echo -e ""
